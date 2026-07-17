@@ -1,36 +1,30 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, useParams } from 'react-router-dom';
+import { Routes, Route, } from 'react-router-dom'
 import { useState } from 'react'
 import './App.css'
 import HomePage from './pages/HomePage';
 import Projects from './pages/Projects';
+import ExperienceSkills from './pages/ExperienceSkills';
+import Contact from './pages/Contact';
+import Navbar from './components/Navbar';
 
 function App() {
-  // let {id} = useParams();
+  let { id } = useParams();
   return (
     <>
       <h1>Zoe McGee's Portfolio</h1>
       <header>
         <div>
           <BrowserRouter>
-            {/*  */}
-            <div>
-              <nav>
-                <Link to="/">Home</Link> |{" "}
-                {/* <Link to="/projects">Projects</Link> |{" "}
-                <Link to="/experienceskills">Experience & Skills</Link> |{" "}
-                <Link to="/contact">Contact</Link> | {" "} */}
-              </nav>
-            </div>
-
-            <div>
+            <Navbar />
             <Routes>
-              <Route path='/' component={<HomePage/>} />
-              {/* <Route path='/projects/:id' component={<Projects/>} />
-              <Route path='/experienceskills' component={<ExperienceSkills/>} />
-              <Route path='/' component={<Contact/>} /> */}
+              <Route path='/' element={<HomePage />} />
+              <Route path='/projects' element={<Projects />} />
+              <Route path='/experienceskills' element={<ExperienceSkills />} />
+              <Route path='/contact' element={<Contact />} />
             </Routes>
-            </div>
+
           </BrowserRouter>
         </div>
       </header>
