@@ -8,6 +8,8 @@ import Projects from './pages/Projects';
 import ExperienceSkills from './pages/ExperienceSkills';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Hero from './components/Hero';
 
 function App() {
   let { id } = useParams();
@@ -18,13 +20,14 @@ function App() {
         <div>
           <BrowserRouter>
             <Navbar />
+            <Hero/>
             <Routes>
               <Route path='/' element={<HomePage />} />
               <Route path='/projects' element={<Projects />} />
               <Route path='/experienceskills' element={<ExperienceSkills />} />
               <Route path='/contact' element={<Contact />} />
             </Routes>
-
+            <Footer/>
           </BrowserRouter>
         </div>
       </header>
