@@ -13,7 +13,7 @@ function Hero() {
                             <span>Nice to meet you!</span>
                             <span></span>
                         </h1>
-                        <img src="./src/assets/IMG_7380.jpeg" alt="A picture of Zoe McGee"></img>
+                        {/* <img src="./src/assets/IMG_7380.jpeg" alt="A picture of Zoe McGee"></img> */}
                     </div>
 
                 </div>

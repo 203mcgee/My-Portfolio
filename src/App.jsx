@@ -1,6 +1,5 @@
 import React from 'react'
-import { BrowserRouter, useParams } from 'react-router-dom';
-import { Routes, Route, } from 'react-router-dom'
+import { BrowserRouter, useParams,Routes, Route } from 'react-router-dom';
 import { useState } from 'react'
 import './App.css'
 import HomePage from './pages/HomePage';
@@ -23,7 +22,7 @@ function App() {
             <Hero/>
             <Routes>
               <Route path='/' element={<HomePage />} />
-              <Route path='/projects' element={<Projects />} />
+              <Route path='/projects/:id' element={<Projects />} />
               <Route path='/experienceskills' element={<ExperienceSkills />} />
               <Route path='/contact' element={<Contact />} />
             </Routes>
