@@ -1,7 +1,8 @@
 import React from 'react'
-import { BrowserRouter, useParams,Routes, Route } from 'react-router-dom';
+import { BrowserRouter, useParams, Routes, Route } from 'react-router-dom';
 import { useState } from 'react'
 import './App.css'
+import './index.css'
 import HomePage from './pages/HomePage';
 import Projects from './pages/Projects';
 import ExperienceSkills from './pages/ExperienceSkills';
@@ -14,22 +15,26 @@ function App() {
   let { id } = useParams();
   return (
     <>
-      <h1>Zoe McGee's Portfolio</h1>
+      <h1>Portfolio</h1>
       <header>
         <div>
           <BrowserRouter>
             <Navbar />
-            <Hero/>
+            <Hero />
             <Routes>
               <Route path='/' element={<HomePage />} />
               <Route path='/projects/:id' element={<Projects />} />
               <Route path='/experienceskills' element={<ExperienceSkills />} />
               <Route path='/contact' element={<Contact />} />
             </Routes>
-            <Footer/>
+            <Footer />
           </BrowserRouter>
         </div>
       </header>
+
+      <main>
+        
+      </main>
     </>
   )
 }

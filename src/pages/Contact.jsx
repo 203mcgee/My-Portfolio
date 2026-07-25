@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+// import { useFormik } from 'formik';
 
 
 export default function Contact(){
@@ -7,7 +8,7 @@ export default function Contact(){
     const [errors,setErrors] = useState({});
 
     // This the regex for the email 
-    const isEmail = (email) => /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    const isEmail = (email) => !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email);
 
     const checkingValidation = (e) =>{
         e.preventDefault();
@@ -29,7 +30,7 @@ export default function Contact(){
         setValues((values)=>({...values,email: e.target.value}));
     }
 
-
+    
 
     return(
         <>
@@ -55,6 +56,8 @@ export default function Contact(){
                 <input type='submit'/>
                 <br />
             </form>
+
+            
         </>
     );
 }

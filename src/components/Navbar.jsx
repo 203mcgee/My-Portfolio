@@ -11,11 +11,11 @@ function Navbar() {
             <header>
                 <div>
                     <div>
-                        <nav>
-                            <Link to="/">Home</Link> |{" "}
-                            <Link to="/projects">Projects</Link> |{" "}
-                            <Link to="/experienceskills">Experience & Skills</Link> |{" "}
-                            <Link to="/contact">Contact</Link> | {" "}
+                        <nav style={{ padding: '10px', borderBottom: '1px solid #ccc' }}>
+                            <Link to="/" style={{ marginRight: '10px' }}>Home</Link> |{" "}
+                            <Link to="/projects" style={{ marginRight: '10px' }}>Projects</Link> |{" "}
+                            <Link to="/experienceskills" style={{ marginRight: '10px' }}>Experience & Skills</Link> |{" "}
+                            <Link to="/contact" style={{ marginRight: '10px' }}>Contact</Link> | {" "}
                         </nav>
                     </div>
                 </div>
