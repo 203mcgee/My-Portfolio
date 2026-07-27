@@ -23,6 +23,7 @@ function App() {
             <Hero />
             <Routes>
               <Route path='/' element={<HomePage />} />
+              <Route path='/projects' element={<Projects />} />
               <Route path='/projects/:id' element={<Projects />} />
               <Route path='/experienceskills' element={<ExperienceSkills />} />
               <Route path='/contact' element={<Contact />} />

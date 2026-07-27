@@ -50,5 +50,24 @@ body {
 /* Project Section */
 
 /* Experience & Skills Section */
+.circle{
+   width: 4px;
+   height: 4px;
+   margin-left: auto; 
+   margin-right: auto; 
+}
+
+.pillar{
+
+}
+
+.event-card{
+
+}
+
+.timeline{
+   display: flex;
+    
+}
 
 /* Contact Section */

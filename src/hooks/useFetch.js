@@ -9,7 +9,7 @@ export default function Fetch (url){
   useEffect(() => {
     const fetchProjects = async () => {
         try{
-            const response = await fetch('https://api.github.com/users/203mcgee/repos');
+            const response = await fetch(url);
             if(!response.ok){
                 throw new Error('Failed to get the projects');
             }
@@ -27,13 +27,7 @@ export default function Fetch (url){
     };
     fetchProjects();
   },[url]) 
-  if (isLoading) {
-    return <h2>Loading projects... ⏳</h2>;
-  }
-
-  if (error) {
-    return <h2 className="error-text">❌ Error: {error}</h2>;
-  }
+  
 
   return { data, isLoading, error };
   
