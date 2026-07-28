@@ -64,9 +64,10 @@ export default function Projects() {
             )}
 
             {/* Fluid Grid container required by rubric */}
+            {/* gridTemplateColumns: 'repeat(4,minmax(250px,1fr))' */}
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(4,minmax(250px,1fr))',
+                gridTemplateColumns: 'repeat(3,250px)',
                 gap: '1.5rem',
                 justifyContent: 'center'
             }}>

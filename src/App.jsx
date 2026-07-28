@@ -10,32 +10,36 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
+import { ThemeProvider } from './components/ThemeContext';
 
 function App() {
   let { id } = useParams();
   return (
     <>
-      <h1>Portfolio</h1>
-      <header>
-        <div>
-          <BrowserRouter>
-            <Navbar />
-            <Hero />
-            <Routes>
-              <Route path='/' element={<HomePage />} />
-              <Route path='/projects' element={<Projects />} />
-              <Route path='/projects/:id' element={<Projects />} />
-              <Route path='/experienceskills' element={<ExperienceSkills />} />
-              <Route path='/contact' element={<Contact />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
-        </div>
-      </header>
+      <ThemeProvider>
+        {/* <h1>Portfolio</h1> */}
+        <header>
+          <div>
+            <BrowserRouter>
+              <Navbar />
+              <Hero />
+              <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/projects' element={<Projects />} />
+                <Route path='/projects/:id' element={<Projects />} />
+                <Route path='/experienceskills' element={<ExperienceSkills />} />
+                <Route path='/contact' element={<Contact />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </div>
+        </header>
 
-      <main>
-        
-      </main>
+        <main>
+
+        </main>
+
+      </ThemeProvider>
     </>
   )
 }
