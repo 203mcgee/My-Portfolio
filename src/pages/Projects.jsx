@@ -54,7 +54,7 @@ export default function Projects() {
     return (
         <>
             <section style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
-            <h1>{id ? `Project Details (#${id})` : 'My Projects'}</h1>
+            <h1 className='text-2xl text-center my-2.5 p-1.5 border-b-2'>{id ? `Project Details (#${id})` : 'My Projects'}</h1>
 
             {/* Only show "Back" link if we are viewing a specific project ID */}
             {id && (

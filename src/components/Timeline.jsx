@@ -15,39 +15,43 @@ const Pillar = () =>{
         </div>
     )
 }
-const EventCard = ({skill,learned}) =>{
+const EventCard = ({heading,date}) =>{
     return(
         <div className='transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl flex flex-col gap-y-2 border shadow-md rounded-xl p-4'>
-            <div className='text-blue-800 font-bold text-lg border-b'>{skill}</div>
-            <div className='text-sm text-gray-700'>{learned}</div>
+            <div className='text-blue-800 font-bold text-lg border-b'>{heading}</div>
+            <div className='text-sm text-gray-700'>{date}</div>
         </div>
     )
 }
 
-const Timeline = ({knownSkills}) => {
+const Timeline = ({info}) => {
     return(
         <div className='flex flex-col gap-y-3 w-full my-4'>
             <Circle/>
-            {knownSkills.map((event,key)=>{
+            {info.map((event,key)=>{
+                const heading = event.skill || event.framework || event.techCheck;
+                const date = event.learned || event.completion;
                return <Fragment key={key}>
                     <div className='grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center mx-auto'>
                         {event.direction === 'left' ? (
-                            <EventCard skill={event.skill} learned={event.learned} />
+                            <EventCard heading={heading} date={date} />
                         ):(
                             <div></div>
                         )
                          }
                         <Pillar/>
                          {event.direction === 'right' ? (
-                            <EventCard skill={event.skill} learned={event.learned} />
+                            <EventCard heading={heading} date={date} />
                         ):(
                             <div></div>
                         )
                          }
                     </div>
-                    {key < (knownSkills.length - 1) && <Circle/>}
+                    {key < (info.length - 1) && <Circle/>}
                 </Fragment>
             })}
         </div>
     )
 }
+
+export default Timeline;

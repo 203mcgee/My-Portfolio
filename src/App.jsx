@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <ThemeProvider>
-        {/* <h1>Portfolio</h1> */}
+        <h1 className='text-center text-2xl font-bold'>Welcome to my Portfolio!</h1>
         <header>
           <div>
             <BrowserRouter>
@@ -27,7 +27,7 @@ function App() {
                 <Route path='/' element={<HomePage />} />
                 <Route path='/projects' element={<Projects />} />
                 <Route path='/projects/:id' element={<Projects />} />
-                <Route path='/experienceskills' element={<ExperienceSkills />} />
+                <Route path='/experience' element={<ExperienceSkills />} />
                 <Route path='/contact' element={<Contact />} />
               </Routes>
               <Footer />

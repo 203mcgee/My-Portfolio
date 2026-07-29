@@ -10,7 +10,7 @@ function Hero() {
     return (
         <>
             {/* id="hero-section" */}
-            <section className="relative flex flex-col items-center justify-center py-12 px-4">
+            <section className="relative flex flex-col items-center justify-center py-12 px-4 bg-[url('/images/IMG_7830.jpeg')]    
                 <div className="container max-w-4xl mx-auto text-center z-10">
 
                     <h1 className="text-3xl font-bold">
