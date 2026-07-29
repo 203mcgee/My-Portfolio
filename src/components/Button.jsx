@@ -8,10 +8,10 @@ margin-top:2rem;
  .button{
     font-size: 2.2rem;
     background-color: ${(props) => props.outline ? 'transparent': '#f6f4d2' };
-    padding: .7em rem;
+    padding: 5px;
     border-radius: 8px;
     display: inline-block;
-    border: 2px solid yellow;
+    border: 1px solid black;
     color: ${(props) => props.outline ? 'yellow' : 'black'};
  }
  @media only screen and (max-width: 768px){
