@@ -34,10 +34,12 @@ export default function Projects() {
 
     function getDisplayedProjects(allRepos) {
         if (!allRepos) return [];
-
+        const goodProjects = id === 1088887137 || id === 1256179191 || id === 1104017768 || id === 1222684857 || id === 1185591651 || id === 1087375365 || id === 1093692273 || id === 1151561614 || id === 1236786653 ||    
+        id === 1277149657; 
         // If an ID exists in the URL, filter for that specific project
         if (id) {
-            return allRepos.filter((repo) => repo.id === Number(id));
+           
+            return allRepos.map((repo) => repo.id === goodProjects);
         }
 
         // If no ID in URL, return all projects
@@ -73,11 +75,11 @@ export default function Projects() {
                     justifyContent: 'center'
                 }}>
                     {projectsToRender.map((repo) => (
-                        <div key={repo.id || repo.name} style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px' }}>
-                            <h3 className='text-sm'>{repo.name}</h3>
+                        <div key={repo.id || repo.name} style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', backgroundColor:'white' }}>
+                            <h3 className='text-2xl'>{repo.name}</h3>
                             <p>{repo.description || 'No description provided.'}</p>
 
-                            <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+                            <div className='text-color-500' style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
                                 {/* Link that updates URL to /projects/:id */}
                                 {!id && <Link to={`/projects/${repo.id}`}>View Details</Link>}
 

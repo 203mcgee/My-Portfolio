@@ -36,7 +36,7 @@ function Hero() {
               I am a junior web developer passionate about building clean, responsive, and user-friendly websites.
             </PText>
             
-            <div className="pt-2">
+            <div className="inline-block items-center pt-2">
               <Button btnLink="/projects" btnText="Projects" outline={false} />
             </div>
           </div>

@@ -35,11 +35,12 @@ export default function Contact(){
     return(
         <>
             <h1>Contact Me</h1>
-            <form onSubmit={checkingValidation}>
+            <form className='flex m-2.5 p-1.5' onSubmit={checkingValidation}>
                 <label htmlFor='userEmail'>Enter Email:</label>
                 <input
                 type='text'
                 id='userEmail'
+                placeholder='Enter Email'
                 value={values.email}
                 onChange={setEmail}/>
                 {Object.entries(errors).map(([key,error]) =>(

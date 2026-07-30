@@ -46,6 +46,27 @@ body {
   border-radius: 50px;
 }
 
+#light{
+  background-color: var(--color-background);
+}
+#dark{
+  background-color: black;
+}
+
+#light body{
+  
+}
+
+.switch {
+  display: flex;
+  width: 100vw;
+  height: 20px;
+  top: 0;
+  right: 20;
+  /* justify-content: center;
+  align-items: center; */
+}
+
 /* Home Section */
 
 /* Project Section */
