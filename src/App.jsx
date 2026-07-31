@@ -11,16 +11,15 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 
-import  ThemeProvider  from './components/ThemeProvider';
+// import  ThemeProvider  from './components/ThemeProvider';
 
 function App() {
   let { id } = useParams();
   return (
-    <>
-      <ThemeProvider>
+  <>
+      {/* <ThemeProvider> */}
         <header>
         <h1 className='text-center text-2xl font-bold'>Welcome to my Portfolio!</h1>
-        {/* <div className='switch'></div> */}
           <div>
             <BrowserRouter>
               <Navbar />
@@ -32,19 +31,17 @@ function App() {
                 <Route path='/experience' element={<ExperienceSkills />} />
                 <Route path='/contact' element={<Contact />} />
               </Routes>
-              <Projects/>
-              <ExperienceSkills/>
+              
               <Footer />
             </BrowserRouter>
           </div>
         </header>
 
-        <main>
-          
-        </main>
+       
 
-      </ThemeProvider>
-    </>
+      {/* </ThemeProvider> */}
+  
+  </>
   )
 }
 

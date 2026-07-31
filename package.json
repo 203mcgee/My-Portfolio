@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/vite": "^4.3.3",
     "formik": "^2.4.9",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-hook-form": "^7.83.0",
     "react-router-dom": "^7.18.1",
     "react-switch": "^7.1.0",
     "styled-components": "^6.4.4",

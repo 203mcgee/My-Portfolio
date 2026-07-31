@@ -7,12 +7,12 @@ const ButtonStyle = styled.div`
 margin-top:2rem;
  .button{
     font-size: 2.2rem;
-    background-color: ${(props) => props.outline ? 'transparent': '#f6f4d2' };
+    background-color: ${(props) => props.outline ? '#60A5FA': '#2563eb' };
     padding: 5px;
     border-radius: 8px;
     display: inline-block;
     border: 1px solid black;
-    color: ${(props) => props.outline ? 'yellow' : 'black'};
+    color: ${(props) => props.outline ? 'yellow' : 'white'};
  }
  @media only screen and (max-width: 768px){
     .button{
@@ -22,13 +22,13 @@ margin-top:2rem;
 
 const Button = ({btnLink = 'test',btnText = 'Test',outline = false}) => {
   return (
-    <div>
-    <ButtonStyle $outline={outline}>
-        <Link className='button' to={btnLink}>
-            {btnText}
-        </Link>
+    <div className='align-center'>
+      <ButtonStyle $outline={outline}>
+          <Link className='button' to={btnLink}>
+              {btnText}
+          </Link>
 
-    </ButtonStyle>
+      </ButtonStyle>
     </div>
   )
 }

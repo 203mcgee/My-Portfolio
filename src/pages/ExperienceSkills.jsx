@@ -30,9 +30,14 @@ export default function ExperienceSkills() {
 
         },
         {
+            skill: 'MySQL',
+            learned: 2025,
+            direction: 'left'
+        },
+        {
             skill: 'HTML/CSS',
             learned: 2026,
-            direction: 'left'
+            direction: 'right'
 
         },
     ]
@@ -68,6 +73,8 @@ export default function ExperienceSkills() {
         },
     ]
 
+    const gridSkills = ['C++','C','JavaScript','HTML/CSS', 'React.js','Node.js','MySQL']
+
 
 
 
@@ -75,6 +82,12 @@ export default function ExperienceSkills() {
         <>
             <div className="max-w-4xl mx-auto px-4 py-8">
                 <h1 className="text-3xl font-bold text-center mb-8">My Experience & Skills</h1>
+
+                <div className='grid grid-cols-3 gap-3 pb-7'>
+                    {gridSkills.map((skill) =>(
+                        <div key={skill} className='text-black text-center bg-white text-4xl m-2 p-2 rounded-lg'>{skill}</div>
+                    ))}
+                </div>
 
                 {/* Skills Section */}
                 <section className="mb-12">

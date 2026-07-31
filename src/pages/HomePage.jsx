@@ -48,7 +48,7 @@ export default function HomePage() {
             Developer Identity
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-300">
-            A motivated <span className="font-semibold text-gray-900 dark:text-white">Junior Web & Software Developer</span> focused on building responsive user interfaces, writing clean frontend logic, and working with modern full-stack web technologies.
+            A motivated <span className="span-change font-semibold text-gray-900 dark:text-white">Junior Web & Software Developer</span> focused on building responsive user interfaces, writing clean frontend logic, and working with modern full-stack web technologies.
           </p>
         </section>
 
@@ -59,20 +59,20 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-2 gap-3 text-center my-auto">
             <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-              <span className="block text-2xl font-extrabold text-blue-600 dark:text-blue-400">10+</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Projects Built</span>
+              <span className="metric-change block text-2xl font-extrabold text-blue-600 dark:text-blue-400">10+</span>
+              <span className="metric-change text-xs text-gray-500 dark:text-gray-400">Projects Built</span>
             </div>
             <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-              <span className="block text-2xl font-extrabold text-blue-600 dark:text-blue-400">4+</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Languages</span>
+              <span className="metric-change block text-2xl font-extrabold text-blue-600 dark:text-blue-400">4+</span>
+              <span className="metric-change text-xs text-gray-500 dark:text-gray-400">Languages</span>
             </div>
             <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-              <span className="block text-2xl font-extrabold text-blue-600 dark:text-blue-400">100%</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Responsive UI</span>
+              <span className="metric-change block text-2xl font-extrabold text-blue-600 dark:text-blue-400">100%</span>
+              <span className="metric-change text-xs text-gray-500 dark:text-gray-400">Responsive UI</span>
             </div>
             <div className="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-              <span className="block text-2xl font-extrabold text-blue-600 dark:text-blue-400">2026</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Capstone Year</span>
+              <span className="metric-change block text-2xl font-extrabold text-blue-600 dark:text-blue-400">2026</span>
+              <span className="metric-change text-xs text-gray-500 dark:text-gray-400">Capstone Year</span>
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch'
+import '../App.css'
 
 export default function Projects() {
     let { id } = useParams()
@@ -34,11 +35,11 @@ export default function Projects() {
 
     function getDisplayedProjects(allRepos) {
         if (!allRepos) return [];
-        const goodProjects = id === 1088887137 || id === 1256179191 || id === 1104017768 || id === 1222684857 || id === 1185591651 || id === 1087375365 || id === 1093692273 || id === 1151561614 || id === 1236786653 ||    
-        id === 1277149657; 
+        const goodProjects = id === 1088887137 || id === 1256179191 || id === 1104017768 || id === 1222684857 || id === 1185591651 || id === 1087375365 || id === 1093692273 || id === 1151561614 || id === 1236786653 ||
+            id === 1277149657;
         // If an ID exists in the URL, filter for that specific project
         if (id) {
-           
+
             return allRepos.map((repo) => repo.id === goodProjects);
         }
 
@@ -68,22 +69,37 @@ export default function Projects() {
 
                 {/* Fluid Grid container required by rubric */}
                 {/* gridTemplateColumns: 'repeat(4,minmax(250px,1fr))' */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(4,minmax(250px,1fr))',
-                    gap: '1.5rem',
-                    justifyContent: 'center'
-                }}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 max-w-6xl mx-auto">
                     {projectsToRender.map((repo) => (
-                        <div key={repo.id || repo.name} style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', backgroundColor:'white' }}>
-                            <h3 className='text-2xl'>{repo.name}</h3>
-                            <p>{repo.description || 'No description provided.'}</p>
+                        <div
+                            key={repo.id || repo.name}
+                            className="project-card border border-gray-200 dark:border-gray-700 rounded-xl p-5 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 shadow-sm flex flex-col justify-between transition-all hover:shadow-md"
+                        >
+                            <div>
+                                <h3 className="text-xl md:text-2xl font-bold mb-2 text-gray-900 dark:text-white break-words">
+                                    {repo.name}
+                                </h3>
+                                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                                    {repo.description || 'No description provided.'}
+                                </p>
+                            </div>
 
-                            <div className='text-color-500' style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-                                {/* Link that updates URL to /projects/:id */}
-                                {!id && <Link to={`/projects/${repo.id}`}>View Details</Link>}
+                            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 text-sm font-medium">
+                                {!id && (
+                                    <Link
+                                        to={`/projects/${repo.id}`}
+                                        className="text-blue-600 dark:text-blue-400 hover:underline"
+                                    >
+                                        View Details
+                                    </Link>
+                                )}
 
-                                <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href={repo.html_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                                >
                                     GitHub Repo ↗
                                 </a>
                             </div>

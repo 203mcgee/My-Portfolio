@@ -2,6 +2,8 @@
 import React from 'react'
 import { createContext, useState } from 'react'
 import ReactSwitch from "react-switch";
+// import "./index.css"
+
 // import { ThemeContext } from 'styled-components';
 // import 'App.css'
 
@@ -17,11 +19,11 @@ const ThemeProvider = ({children}) => {
 
     return (
         <>
-            <ThemeContext.Provider>
-                <div id={theme}>
+            <ThemeContext.Provider value={{theme,toggleTheme}}>
+                <div className='app' id={theme}>
                     {/* <App/> */}
                     <div className='switch'>
-                        <label>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
+                        <label className='gap-0.5'>{theme === "light" ? "Light Mode " : "Dark Mode "}</label>
                         <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
                     </div>
                     {children}
