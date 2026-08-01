@@ -8,7 +8,7 @@ import { SearchResults } from '../components/SearchResults';
 export default function Projects() {
     let { id } = useParams()
     let [results,setResults] = useState([]);
-    // const url = ''
+    
 
     const { data: repos, isLoading, error } = useFetch('https://api.github.com/users/203mcgee/repos')
 
@@ -20,26 +20,11 @@ export default function Projects() {
         return <h2 className="error-text">❌ Error: {error}</h2>;
     }
 
-    // const projectsToShow = [
-    //     'album-app',
-    //     'capstone-project-II',
-    //     'christmasPrograms-app',
-    //     'clock-project',
-    //     'manga-addict',
-    //     'movies-app',
-    //     'mymovies-app',
-    //     'nextstack-module01-bio',
-    //     'personal-soundboard'
-    // ]
-
-    // function getFinishedProjects(allRepos){
-    //     return allRepos.filter((repo) => projectsToShow.includes(repo.name));
-    // }
+    
 
     function getDisplayedProjects(allRepos) {
         if (!allRepos) return [];
-        const goodProjects = id === 1088887137 || id === 1256179191 || id === 1104017768 || id === 1222684857 || id === 1185591651 || id === 1087375365 || id === 1093692273 || id === 1151561614 || id === 1236786653 ||
-            id === 1277149657;
+        
         // If an ID exists in the URL, filter for that specific project
         if (id) {
 
