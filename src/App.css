@@ -1,6 +1,12 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-html, body, #root {  height: 100%;  margin: 0;  padding: 0;}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 @theme {
   --color-background: #f6f4d2;
@@ -17,13 +23,12 @@ html, body, #root {  height: 100%;  margin: 0;  padding: 0;}
     }
   }
 
-  
   --animate-fade-in: fade-in 0.7s ease-out forwards;
   --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
   --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-}/* 1. Reset default browser margins and set base viewport height */
+} /* 1. Reset default browser margins and set base viewport height */
 
 /* 2. Theme containers - full width and full viewport height */
 #light {
@@ -41,7 +46,7 @@ html, body, #root {  height: 100%;  margin: 0;  padding: 0;}
 }
 
 body {
-  background-color: #F6F4D2;
+  background-color: #f6f4d2;
   color: black;
   /* padding: 50px; */
 }
@@ -78,20 +83,18 @@ body {
 
 #light html {
   background-color: var(--color-background);
-
 }
 
 #dark html {
   background-color: black;
-
 }
 
-#dark span{
+#dark span {
   background-color: black;
   color: #ffffff;
 }
 
-#dark #highlightName{
+#dark #highlightName {
   color: blue;
 }
 
@@ -106,36 +109,30 @@ body {
   align-items: center; */
 }
 
-
-
 /* Home Section */
 
-#light .span-change{
-  color:black;
+#light .span-change {
+  color: black;
 }
-#dark .span-change{
+#dark .span-change {
   background-color: white;
-  color:black;
+  color: black;
 }
-#light .metric-change{
-  color:black;
+#light .metric-change {
+  color: black;
 }
-#dark .metric-change{
+#dark .metric-change {
   background-color: #f9fafb;
-  color:black;
+  color: black;
 }
 
 /* Project Section */
-@media only screen and (max-width: 375px){
-
-
+@media only screen and (max-width: 375px) {
   .projects-grid {
     grid-template-columns: 1fr; /* Single column layout for small screens */
   }
 }
-@media only screen and (max-width: 320px){
-
-
+@media only screen and (max-width: 320px) {
   .projects-grid {
     grid-template-columns: 1fr; /* Single column layout for small screens */
   }
@@ -148,16 +145,20 @@ body {
   margin-right: auto;
 }
 
-.pillar {
-}
-
-.event-card {
-}
-
 .timeline {
   display: flex;
 }
 
+.results-list {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 8px #ddd;
+  border-radius: 10px;
+  margin-top: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
 /* Contact Section */
-
-

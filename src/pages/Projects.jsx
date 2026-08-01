@@ -1,10 +1,13 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useParams, Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch'
 import '../App.css'
+import { SearchBar } from '../components/SearchBar';
+import { SearchResults } from '../components/SearchResults';
 
 export default function Projects() {
     let { id } = useParams()
+    let [results,setResults] = useState([]);
     // const url = ''
 
     const { data: repos, isLoading, error } = useFetch('https://api.github.com/users/203mcgee/repos')
@@ -40,7 +43,7 @@ export default function Projects() {
         // If an ID exists in the URL, filter for that specific project
         if (id) {
 
-            return allRepos.map((repo) => repo.id === goodProjects);
+            return allRepos.map((repo) => repo.id === Number(id));
         }
 
         // If no ID in URL, return all projects
@@ -60,6 +63,12 @@ export default function Projects() {
             <section style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
                 <h1 className='text-2xl text-center my-2.5 p-1.5 border-b-2'>{id ? `Project Details (#${id})` : 'My Projects'}</h1>
 
+                
+                    <SearchBar setResults={setResults} />
+                    {results && results.length > 0 && <SearchResults results={results}/>}
+                    
+
+                
                 {/* Only show "Back" link if we are viewing a specific project ID */}
                 {id && (
                     <Link to="/projects" style={{ display: 'inline-block', marginBottom: '1rem' }}>
@@ -85,14 +94,14 @@ export default function Projects() {
                             </div>
 
                             <div className="flex items-center gap-4 mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 text-sm font-medium">
-                                {!id && (
+                                {/* {!id && (
                                     <Link
                                         to={`/projects/${repo.id}`}
                                         className="text-blue-600 dark:text-blue-400 hover:underline"
                                     >
                                         View Details
                                     </Link>
-                                )}
+                                )} */}
 
                                 <a
                                     href={repo.html_url}
