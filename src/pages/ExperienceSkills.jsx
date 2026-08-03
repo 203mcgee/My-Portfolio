@@ -35,9 +35,15 @@ export default function ExperienceSkills() {
             direction: 'left'
         },
         {
-            skill: 'HTML/CSS',
+            skill: 'HTML',
             learned: 2026,
             direction: 'right'
+
+        },
+        {
+            skill: 'CSS',
+            learned: 2026,
+            direction: 'left'
 
         },
     ]
@@ -73,7 +79,7 @@ export default function ExperienceSkills() {
         },
     ]
 
-    const gridSkills = ['C++','C','JavaScript','HTML/CSS', 'React.js','Node.js','MySQL']
+    const gridSkills = ['C++','C','JavaScript','HTML','CSS' ,'React.js','Node.js','MySQL']
 
 
 
@@ -85,7 +91,7 @@ export default function ExperienceSkills() {
 
                 <div className='grid grid-cols-3 gap-3 pb-7'>
                     {gridSkills.map((skill) =>(
-                        <div key={skill} className='text-black text-center bg-white text-4xl m-2 p-2 rounded-lg'>{skill}</div>
+                        <div key={skill} className='text-black text-center bg-white text-sm m-3.5 p-2.5 rounded-lg min-h-fit min-w-fit max-h-3.5 max-w-3.5 gap-2.5'>{skill}</div>
                     ))}
                 </div>
 

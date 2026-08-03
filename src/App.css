@@ -126,6 +126,17 @@ body {
   color: black;
 }
 
+@media only screen and (max-width:375px){
+  #light .developer-identity-section{
+    background-color: white;
+    color: black;
+  }
+  #black .developer-identity-section{
+    background-color: white;
+    color: black;
+  }
+}
+
 /* Project Section */
 @media only screen and (max-width: 375px) {
   .projects-grid {
