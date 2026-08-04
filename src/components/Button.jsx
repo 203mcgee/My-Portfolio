@@ -22,7 +22,7 @@ margin-top:2rem;
 
 const Button = ({btnLink = 'test',btnText = 'Test',outline = false}) => {
   return (
-    <div className='align-center'>
+    <div className='text-center'>
       <ButtonStyle $outline={outline}>
           <Link className='button' to={btnLink}>
               {btnText}
@@ -33,4 +33,4 @@ const Button = ({btnLink = 'test',btnText = 'Test',outline = false}) => {
   )
 }
 
-export default Button
+export default Button;

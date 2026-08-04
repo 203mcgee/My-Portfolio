@@ -19,9 +19,9 @@ function App() {
   <>
       {/* <ThemeProvider> */}
         <header>
-        <h1 className='text-center text-2xl font-bold'>Welcome to my Portfolio!</h1>
+        <h1 className='text-center text-2xl font-bold mb-1'>Welcome to my Portfolio!</h1>
           <div>
-            <BrowserRouter>
+            <BrowserRouter basename="/My-Portfolio">
               <Navbar />
               <Hero />
               <Routes>
