@@ -7,7 +7,7 @@ const Contact = () => {
     const [message, setMessage] = useState('');
 
     
-
+    // /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/ 
     function validateEmail(email) {
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return regex.test(email);
