@@ -1,50 +1,44 @@
-// import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import react from 'react'
-
-
-
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
+  const location = useLocation();
 
-    return (
-        <>
-            <header className="w-full border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-                <nav className="flex justify-center items-center gap-4 py-3 px-4 max-w-4xl mx-auto flex-wrap text-sm md:text-base font-medium">
-                    <Link
-                        to="/"
-                        className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                    >
-                        Home
-                    </Link>
-                    <span className="text-gray-300 dark:text-gray-600">|</span>
+  const getLinkStyles = (path) => {
+    const isActive = location.pathname === path;
+    return `px-4 py-2 rounded-lg font-medium transition-colors ${
+      isActive
+        ? 'text-black bg-gray-200 font-bold'
+        : 'text-black hover:text-black hover:bg-gray-100'
+    }`;
+  };
 
-                    <Link
-                        to="/projects"
-                        className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                    >
-                        Projects
-                    </Link>
-                    <span className="text-gray-300 dark:text-gray-600">|</span>
+//   Kept <Link> Tags: Used useLocation().pathname to manually check active paths without replacing <Link> with <NavLink>.
 
-                    <Link
-                        to="/experience"
-                        className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                    >
-                        Experience & Skills
-                    </Link>
-                    <span className="text-gray-300 dark:text-gray-600">|</span>
+  return (
+    <header className="w-full border-b border-gray-200 bg-white">
+      <nav className="flex justify-center items-center gap-4 py-3 px-4 max-w-4xl mx-auto flex-wrap text-sm md:text-base font-medium">
+        <Link to="/" className={getLinkStyles('/')}>
+          Home
+        </Link>
+        <span className="text-gray-300">|</span>
 
-                    <Link
-                        to="/contact"
-                        className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition"
-                    >
-                        Contact
-                    </Link>
-                </nav>
-            </header>
-        </>
-    )
+        <Link to="/projects" className={getLinkStyles('/projects')}>
+          Projects
+        </Link>
+        <span className="text-gray-300">|</span>
+
+        <Link to="/experience" className={getLinkStyles('/experience')}>
+          Experience & Skills
+        </Link>
+        <span className="text-gray-300">|</span>
+
+        <Link to="/contact" className={getLinkStyles('/contact')}>
+          Contact
+        </Link>
+      </nav>
+    </header>
+  );
 }
 
-export default Navbar
+export default Navbar;
