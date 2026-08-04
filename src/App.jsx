@@ -21,7 +21,7 @@ function App() {
         <header>
         <h1 className='text-center text-2xl font-bold mb-1'>Welcome to my Portfolio!</h1>
           <div>
-            <BrowserRouter basename="/My-Portfolio">
+            <BrowserRouter basename={import.meta.env.BASE_URL}>
               <Navbar />
               <Hero />
               <Routes>
