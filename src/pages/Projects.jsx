@@ -1,106 +1,88 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import useFetch from '../hooks/useFetch'
-import '../App.css'
+import useFetch from '../hooks/useFetch';
+import '../App.css';
 import { SearchBar } from '../components/SearchBar';
 import { SearchResults } from '../components/SearchResults';
 
 export default function Projects() {
-    let { id } = useParams()
-    let [results,setResults] = useState([]);
+  let { id } = useParams();
+  let [results, setResults] = useState([]);
+
+  const { data: repos, isLoading, error } = useFetch('https://api.github.com/users/203mcgee/repos');
+
+  if (isLoading) {
+    return <h2 className="text-center text-xl font-bold py-12 text-black">Loading projects... ⏳</h2>;
+  }
+
+  if (error) {
+    return <h2 className="text-center text-xl font-bold py-12 text-red-600">❌ Error: {error}</h2>;
+  }
+
+  function getDisplayedProjects(allRepos) {
+    if (!allRepos) return [];
     
-
-    const { data: repos, isLoading, error } = useFetch('https://api.github.com/users/203mcgee/repos')
-
-    if (isLoading) {
-        return <h2>Loading projects... ⏳</h2>;
+    // 🟢 Fixed: Use .filter() instead of .map() to return the matching repository object
+    if (id) {
+      return allRepos.filter((repo) => repo.id === Number(id));
     }
 
-    if (error) {
-        return <h2 className="error-text">❌ Error: {error}</h2>;
-    }
+    return allRepos;
+  }
 
-    
+  const projectsToRender = getDisplayedProjects(repos);
 
-    function getDisplayedProjects(allRepos) {
-        if (!allRepos) return [];
-        
-        // If an ID exists in the URL, filter for that specific project
-        if (id) {
+  return (
+    <section className="bg-white min-h-screen py-8 px-4 max-w-6xl mx-auto text-black">
+      <h1 className="text-3xl font-extrabold text-center text-black my-4 pb-3 border-b-2 border-gray-200">
+        {id ? `Project Details (#${id})` : 'My Projects'}
+      </h1>
 
-            return allRepos.map((repo) => repo.id === Number(id));
-        }
+      {/* Search Components */}
+      <div className="mb-6">
+        <SearchBar setResults={setResults} />
+        {results && results.length > 0 && <SearchResults results={results} />}
+      </div>
 
-        // If no ID in URL, return all projects
-        return allRepos;
-    }
+      {/* Back Link for single project view */}
+      {id && (
+        <Link 
+          to="/projects" 
+          className="inline-block mb-6 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-black font-semibold rounded-lg transition-colors"
+        >
+          ← Back to All Projects
+        </Link>
+      )}
 
-    // Call the function to get our array to render
-    const projectsToRender = getDisplayedProjects(repos);
-    // const finishedProjects = getFinishedProjects(repos);
+      {/* Responsive Projects Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
+        {projectsToRender.map((repo) => (
+          <div
+            key={repo.id || repo.name}
+            className="border-2 border-gray-200 rounded-2xl p-6 bg-white text-black shadow-sm flex flex-col justify-between transition-all hover:shadow-md hover:border-gray-300"
+          >
+            <div>
+              <h3 className="text-xl font-bold mb-3 text-black break-words">
+                {repo.name}
+              </h3>
+              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                {repo.description || 'No description provided.'}
+              </p>
+            </div>
 
-
-
-
-
-    return (
-        <>
-            <section style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
-                <h1 className='text-2xl text-center my-2.5 p-1.5 border-b-2'>{id ? `Project Details (#${id})` : 'My Projects'}</h1>
-
-                
-                    <SearchBar setResults={setResults} />
-                    {results && results.length > 0 && <SearchResults results={results}/>}
-                    
-
-                
-                {/* Only show "Back" link if we are viewing a specific project ID */}
-                {id && (
-                    <Link to="/projects" style={{ display: 'inline-block', marginBottom: '1rem' }}>
-                        ← Back to All Projects
-                    </Link>
-                )}
-
-                {/* Fluid Grid container required by rubric */}
-                {/* gridTemplateColumns: 'repeat(4,minmax(250px,1fr))' */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 max-w-6xl mx-auto">
-                    {projectsToRender.map((repo) => (
-                        <div
-                            key={repo.id || repo.name}
-                            className="project-card border border-gray-200 dark:border-gray-700 rounded-xl p-5 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 shadow-sm flex flex-col justify-between transition-all hover:shadow-md"
-                        >
-                            <div>
-                                <h3 className="text-xl md:text-2xl font-bold mb-2 text-gray-900 dark:text-white break-words">
-                                    {repo.name}
-                                </h3>
-                                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                                    {repo.description || 'No description provided.'}
-                                </p>
-                            </div>
-
-                            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 text-sm font-medium">
-                                {/* {!id && (
-                                    <Link
-                                        to={`/projects/${repo.id}`}
-                                        className="text-blue-600 dark:text-blue-400 hover:underline"
-                                    >
-                                        View Details
-                                    </Link>
-                                )} */}
-
-                                <a
-                                    href={repo.html_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-                                >
-                                    GitHub Repo ↗
-                                </a>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        </>
-    );
+            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-gray-200 text-sm font-semibold">
+              <a
+                href={repo.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 px-4 py-2 bg-black text-white hover:bg-gray-800 rounded-lg transition-colors"
+              >
+                GitHub Repo ↗
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

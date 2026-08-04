@@ -103,7 +103,8 @@ body {
   width: 100vw;
   height: 20px;
   top: 0;
-  right: 30;
+  right: 25;
+  left: 25;
   gap: 5px;
   /* justify-content: center;
   align-items: center; */

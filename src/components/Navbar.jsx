@@ -6,7 +6,7 @@ function Navbar() {
 
   const getLinkStyles = (path) => {
     const isActive = location.pathname === path;
-    return `px-4 py-2 rounded-lg font-medium transition-colors ${
+    return `px-.5 py-2 rounded-lg font-medium transition-colors ${
       isActive
         ? 'text-black bg-gray-200 font-bold'
         : 'text-black hover:text-black hover:bg-gray-100'

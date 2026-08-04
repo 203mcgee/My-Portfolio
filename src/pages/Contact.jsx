@@ -1,6 +1,21 @@
 
 import React, { useState } from 'react'
 
+
+// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//         if (formValues.email.trim().length === 0) {
+            
+// errors.email
+//  = "Email is required.";
+//         } else if(!emailRegex.test(
+// formValues.email
+// )) {
+            
+// errors.email
+//  = "Enter a valid email address.";
+//         } 
+
+
 const Contact = () => {
     const [userName, setUserName] = useState('');
     const [userEmail, setEmail] = useState('');
