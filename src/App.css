@@ -81,13 +81,13 @@ body {
   width: 100%;
 }
 
-#light html {
+/* #light html {
   background-color: var(--color-background);
 }
 
 #dark html {
   background-color: black;
-}
+} */
 
 #dark span {
   background-color: black;
