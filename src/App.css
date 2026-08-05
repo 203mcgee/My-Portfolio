@@ -94,6 +94,9 @@ body {
   color: #ffffff;
 }
 
+#light #highlightName {
+  color: blue;
+}
 #dark #highlightName {
   color: blue;
 }
