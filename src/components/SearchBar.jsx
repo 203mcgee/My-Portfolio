@@ -37,7 +37,7 @@ export const SearchBar = ({setResults}) => {
             <input
                 type="text"
                 placeholder="Search for Project..."
-                className="w-full bg-transparent border-none outline-none text-base text-gray-800 dark:text-gray-100 placeholder-gray-400"
+                className="search-bar w-full bg-transparent border-none outline-none text-base text-gray-800 dark:text-gray-100 placeholder-gray-400"
                 value={input}
                 onChange={(e) => handleChange(e.target.value)}
             />

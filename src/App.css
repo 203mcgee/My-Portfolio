@@ -97,6 +97,9 @@ body {
 #light #highlightName {
   color: blue;
 }
+#light .search-bar{
+  background-color: white;
+}
 #dark #highlightName {
   color: blue;
 }
