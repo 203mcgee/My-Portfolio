@@ -4,7 +4,7 @@ import '../../src/index.css';
 import PText from "./PText";
 import Button from "./Button";
 import prof_photo from "../assets/images/prof_profile.jpeg";
-// max-w-4xl mx-auto
+// max-w-4xl mx-auto dark:border-gray-700
 function Hero() {
   return (
     <section className=" relative py-12 px-4 ">
@@ -17,7 +17,7 @@ function Hero() {
         {/* Left: Profile Picture */}
         <div className="shrink-0 flex-1 flex  w-full  h-inherit">
           <img
-            className="w-full h-inherit block flex-1  object-cover border-4 border-white dark:border-gray-700 rounded-2xl shadow-lg"
+            className="w-full h-inherit block flex-1  object-cover border-4 border-white  rounded-2xl shadow-lg"
             src={prof_photo} /* Uses your imported image variable */
             alt="Profile picture of Zoe McGee"
           />
