@@ -26,9 +26,9 @@ function Hero() {
         {/* Right: Intro Text & CTA */}
         <div className="flex flex-col items-center justify-center  md:text-left z-10 flex-1 pt-5">
           <h1 className="flex flex-row gap-4 text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-3">
-            <span className="opacity-0 animate-fade-in">Hi, I'm </span>
-            <span id="highlightName" className="text-blue-600 dark:text-blue-400 opacity-0 animate-fade-in-delay-1">Zoe </span>
-            <span className="text-gradient opacity-0 animate-fade-in-delay-2">McGee</span>
+            <span className="hero-intro opacity-0 animate-fade-in">Hi, I'm </span>
+            <span id="highlightName" className="hero-intro text-blue-600 dark:text-blue-400 opacity-0 animate-fade-in-delay-1">Zoe </span>
+            <span className="hero-intro text-gradient opacity-0 animate-fade-in-delay-2">McGee</span>
           </h1>
 
           <div className="opacity-0 animate-fade-in-delay-3 space-y-4  items-center pt-2">

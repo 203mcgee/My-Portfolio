@@ -33,7 +33,7 @@ export default function Projects() {
   const projectsToRender = getDisplayedProjects(repos);
 
   return (
-    <section className="bg-white min-h-screen py-8 px-4 max-w-6xl mx-auto text-black">
+    <section className=" min-h-screen py-8 px-4 max-w-6xl mx-auto text-black">
       <h1 className="text-3xl font-extrabold text-center text-black my-4 pb-3 border-b-2 border-gray-200">
         {id ? `Project Details (#${id})` : 'My Projects'}
       </h1>
@@ -75,7 +75,7 @@ export default function Projects() {
                 href={repo.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 px-4 py-2 bg-black text-white hover:bg-gray-800 rounded-lg transition-colors"
+                className="inline-flex items-center gap-1 px-4 py-2 bg-white text-black hover:bg-gray-200 rounded-lg transition-colors"
               >
                 GitHub Repo ↗
               </a>
