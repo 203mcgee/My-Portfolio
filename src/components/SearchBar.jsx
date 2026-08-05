@@ -30,14 +30,14 @@ export const SearchBar = ({setResults}) => {
         setInput(value);
         fetchData(value);
     };
-
+// dark:text-gray-100
     return (
         <div className="search-bar flex items-center w-50  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-2.5 shadow-sm">
             <FaSearch className="text-gray-400 dark:text-gray-300 mr-2 text-lg shrink-0" />
             <input
                 type="text"
                 placeholder="Search for Project..."
-                className=" w-full bg-transparent border-none outline-none text-base text-gray-800 dark:text-gray-100 placeholder-gray-400"
+                className=" w-full bg-transparent border-none outline-none text-base text-gray-800  placeholder-gray-400"
                 value={input}
                 onChange={(e) => handleChange(e.target.value)}
             />
