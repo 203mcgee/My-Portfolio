@@ -107,6 +107,9 @@ body {
 #light .hero-intro{
   color: black;
 }
+#dark .search-bar-text{
+  color: white;
+}
 
 .switch {
   display: flex;
