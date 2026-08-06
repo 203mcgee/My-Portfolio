@@ -23,7 +23,7 @@ const ThemeProvider = ({children}) => {
                 <div className='app' id={theme}>
                     {/* <App/> */}
                     <div className='switch'>
-                        <label className='gap-0.5'>{theme === "light" ? "Light Mode " : "Dark Mode "}</label>
+                        {/* <label className='gap-0.5 text-sm'>{theme === "light" ? "Light Mode " : "Dark Mode "}</label> */}
                         <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
                     </div>
                     {children}
