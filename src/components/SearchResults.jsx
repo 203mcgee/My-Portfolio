@@ -1,16 +1,13 @@
-import React from 'react'
-import {Result} from './Result'
+
+import React from 'react';
+import { Result } from './Result';
 
 export const SearchResults = ({ results }) => {
-    return (
-        <>
-            {/* width:100% bg-white  */}
-            <div className='results-list'>
-                {results.map((result, id) => {
-                    
-                    return <Result result={result.name} key={id} />;
-                })}
-            </div>
-        </>
-    )
-}
+  return (
+    <div className="results-list">
+      {results.map((result) => (
+        <Result key={result.id || result.name} result={result} />
+      ))}
+    </div>
+  );
+};

@@ -2,29 +2,25 @@
 import React, { useState } from 'react'
 
 
-// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//         if (formValues.email.trim().length === 0) {
-            
-// errors.email
-//  = "Email is required.";
-//         } else if(!emailRegex.test(
-// formValues.email
-// )) {
-            
-// errors.email
-//  = "Enter a valid email address.";
-//         } 
+// https://github.com/AkajithAk/ReactUi/blob/main/src/Components/EmailValidation/EmailValidation.js
 
 
 const Contact = () => {
     const [userName, setUserName] = useState('');
     const [userEmail, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [error,setError] = useState(false);
 
     
     // /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/ 
     function validateEmail(email) {
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if(!email.match(regex)){
+            setError(true);
+        }
+        else{
+            setError(false);
+        }
         return regex.test(email);
     }
 
@@ -97,7 +93,7 @@ const Contact = () => {
                             onChange={handleEmail}
                             required
                             className='border px-3 py-1' />
-                        <span className=""></span>
+                        {error?<p style={{color:"red"}}>Enter valid Email</p>:''}
                     </label>
 
 
