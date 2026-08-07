@@ -97,17 +97,17 @@ body {
 #light #highlightName {
   color: blue;
 }
-#light .search-bar{
+#light .search-bar {
   background-color: white;
 }
 #dark #highlightName {
   color: blue;
 }
 
-#light .hero-intro{
+#light .hero-intro {
   color: black;
 }
-#dark .search-bar-text{
+#dark .search-bar-text {
   color: white;
 }
 
@@ -115,15 +115,27 @@ body {
   display: flex;
   width: 100vw;
   height: 20px;
- 
+
   position: absolute;
   top: 10px;
-  right: 15px;
+  left: 15px;
   gap: 5px;
-  justify-content: flex-end; 
-   align-items: flex-end;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
+@media only screen and (max-width: 375px) {
+  .switch {
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    top: 139rem;
+    left: 30px;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+}
 /* Home Section */
 
 #light .span-change {
@@ -141,12 +153,12 @@ body {
   color: black;
 }
 
-@media only screen and (max-width:375px){
-  #light .developer-identity-section{
+@media only screen and (max-width: 375px) {
+  #light .developer-identity-section {
     background-color: white;
     color: black;
   }
-  #black .developer-identity-section{
+  #black .developer-identity-section {
     background-color: white;
     color: black;
   }
