@@ -23,6 +23,7 @@ If you are developing a production application, we recommend using TypeScript wi
 I have created a portfolio that is Single Page Application. 
 
 ## Single Page Application
+```
 _______________
 │   App.css
 │   App.jsx
@@ -54,6 +55,7 @@ _______________
         ExperienceSkills.jsx
         HomePage.jsx
         Projects.jsx
+```
 
 ## Architectural Breakdown
 
@@ -75,9 +77,9 @@ Works fine with npm run dev and npm run build.
 
 2.Render Cycles
 
-It has no way to be in an infintite loop and side effects in the code.
+It has no way to be in an infinite loop and side effects in the code.
 
-3. Theme Consistency
+3.Theme Consistency
 
 Theme is generally is consistent throughout the page.
 
