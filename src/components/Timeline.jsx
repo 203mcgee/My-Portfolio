@@ -31,6 +31,7 @@ const Timeline = ({info}) => {
             {info.map((event,key)=>{
                 const heading = event.skill || event.framework || event.techCheck;
                 const date = event.learned || event.completion;
+                {/* Wrap elements in <Fragment> to group them together in situations where you need a single element. */}
                return <Fragment key={key}>
                     <div className='grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center mx-auto'>
                         {event.direction === 'left' ? (

@@ -199,4 +199,8 @@ body {
   overflow-y: auto;
 }
 
+#dark .grid-skills{
+  color:black;
+}
+
 /* Contact Section */
